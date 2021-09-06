@@ -74,7 +74,7 @@ all_labels <- c(test_labels, training_labels)
 # they have to be in the same order as in the complete set
 # since for the complete set we first added test_set, then training_set, labels should be in the same order
 
-## 3.2. Add labels to the selected dataset
+## 3.5. Add labels to the selected dataset
 selected_set <- cbind(`Activity` = all_labels, selected_set)
 
 
@@ -87,6 +87,7 @@ selected_set <- cbind(`Activity` = all_labels, selected_set)
 # 5. Create tidy data set ------ 
 # From the data set in step 4, creates a second, independent tidy data set 
 # with the average of each variable for each activity and each subject.
+
 
 ## 5.1. Add subjects to the dataset -----
 
@@ -103,6 +104,7 @@ all_subjects <- c(test_subjects, training_subjects)
 
 ### 5.1.3. Add subjects to the selected dataset ------
 selected_set <- cbind(`SubjectID` = all_subjects, selected_set)
+
 
 ## 5.2. Create new data set, sorted by activity and subject and calculate average-----
 
@@ -130,6 +132,7 @@ new_names <- paste("mean-of-", colnames(clean_set[,3:length(clean_set)]),sep="")
 # rename columns for better understanding
 colnames(clean_set)[3:ncol(clean_set)] <- new_names
 
-## Save tidy dataset into a new file
+
+## 5.3. Save tidy dataset into a new file
 fwrite(x = clean_set, file = "clean_data.txt", quote = FALSE)
 
