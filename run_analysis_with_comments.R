@@ -135,5 +135,5 @@ colnames(clean_set)[3:ncol(clean_set)] <- new_names
 
 
 ## 5.3. Save tidy dataset into a new file
-fwrite(x = clean_set, file = "clean_data.txt", quote = FALSE)
+fwrite(x = clean_set, file = "clean_data.txt", row.name=FALSE)
 

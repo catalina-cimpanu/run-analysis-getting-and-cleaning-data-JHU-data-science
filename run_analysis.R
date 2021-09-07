@@ -54,5 +54,5 @@ new_names <- paste("mean-of-", colnames(clean_set[,3:length(clean_set)]),sep="")
 colnames(clean_set)[3:ncol(clean_set)] <- new_names
 
 
-fwrite(x = clean_set, file = "clean_data.txt", quote = FALSE)
+fwrite(x = clean_set, file = "clean_data.txt", row.name=FALSE)
 
