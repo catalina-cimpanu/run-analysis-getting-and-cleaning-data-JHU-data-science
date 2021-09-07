@@ -1,3 +1,4 @@
+
 ## Original dataset information
 
 The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
@@ -69,77 +70,114 @@ The complete list of variables of each feature vector is available in 'features.
 From this list of variables of features vectors, only the measurements on the mean and standard deviation for each measurement were selected, rom both training and the test sets.
 A second, independent tidy data set with the average of each variable for each activity and each subject was created. 
 
-The clean dataset contains the following variables:
+## The clean dataset contains the following variables:
 
-- "SubjectID": the ID of the subject that performed the activity                           
-- "Activity": the performed activity
-- Averages of the means and standard deviations of the variables of the feature vector for each pattern: (where '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.) \
-     - "mean-of-tBodyAcc-mean()-X"    
-     - "mean-of-tBodyAcc-mean()-Y"           
-     - "mean-of-tBodyAcc-mean()-Z"           
-     - "mean-of-tBodyAcc-std()-X"           
-     - "mean-of-tBodyAcc-std()-Y"            
-     - "mean-of-tBodyAcc-std()-Z"            
-     - "mean-of-tGravityAcc-mean()-X"       
-     - "mean-of-tGravityAcc-mean()-Y"        
-     - "mean-of-tGravityAcc-mean()-Z"        
-     - "mean-of-tGravityAcc-std()-X"        
-     - "mean-of-tGravityAcc-std()-Y"         
-     - "mean-of-tGravityAcc-std()-Z"         
-     - "mean-of-tBodyAccJerk-mean()-X"      
-     - "mean-of-tBodyAccJerk-mean()-Y"       
-     - "mean-of-tBodyAccJerk-mean()-Z"       
-     - "mean-of-tBodyAccJerk-std()-X"       
-     - "mean-of-tBodyAccJerk-std()-Y"        
-     - "mean-of-tBodyAccJerk-std()-Z"        
-     - "mean-of-tBodyGyro-mean()-X"         
-     - "mean-of-tBodyGyro-mean()-Y"          
-     - "mean-of-tBodyGyro-mean()-Z"          
-     - "mean-of-tBodyGyro-std()-X"          
-     - "mean-of-tBodyGyro-std()-Y"           
-     - "mean-of-tBodyGyro-std()-Z"          
-     - "mean-of-tBodyGyroJerk-mean()-X"     
-     - "mean-of-tBodyGyroJerk-mean()-Y"     
-     - "mean-of-tBodyGyroJerk-mean()-Z"      
-     - "mean-of-tBodyGyroJerk-std()-X"      
-     - "mean-of-tBodyGyroJerk-std()-Y"       
-     - "mean-of-tBodyGyroJerk-std()-Z"       
-     - "mean-of-tBodyAccMag-mean()"         
-     - "mean-of-tBodyAccMag-std()"           
-     - "mean-of-tGravityAccMag-mean()"       
-     - "mean-of-tGravityAccMag-std()"       
-     - "mean-of-tBodyAccJerkMag-mean()"      
-     - "mean-of-tBodyAccJerkMag-std()"       
-     - "mean-of-tBodyGyroMag-mean()"        
-     - "mean-of-tBodyGyroMag-std()"          
-     - "mean-of-tBodyGyroJerkMag-mean()"     
-     - "mean-of-tBodyGyroJerkMag-std()"     
-     - "mean-of-fBodyAcc-mean()-X"           
-     - "mean-of-fBodyAcc-mean()-Y"           
-     - "mean-of-fBodyAcc-mean()-Z"          
-     - "mean-of-fBodyAcc-std()-X"            
-     - "mean-of-fBodyAcc-std()-Y"            
-     - "mean-of-fBodyAcc-std()-Z"           
-     - "mean-of-fBodyAccJerk-mean()-X"       
-     - "mean-of-fBodyAccJerk-mean()-Y"       
-     - "mean-of-fBodyAccJerk-mean()-Z"      
-     - "mean-of-fBodyAccJerk-std()-X"        
-     - "mean-of-fBodyAccJerk-std()-Y"        
-     - "mean-of-fBodyAccJerk-std()-Z"       
-     - "mean-of-fBodyGyro-mean()-X"          
-     - "mean-of-fBodyGyro-mean()-Y"          
-     - "mean-of-fBodyGyro-mean()-Z"         
-     - "mean-of-fBodyGyro-std()-X"           
-     - "mean-of-fBodyGyro-std()-Y"           
-     - "mean-of-fBodyGyro-std()-Z"          
-     - "mean-of-fBodyAccMag-mean()"          
-     - "mean-of-fBodyAccMag-std()"     
-     - "mean-of-fBodyBodyAccJerkMag-mean()"      
-     - "mean-of-fBodyBodyAccJerkMag-std()"     
-     - "mean-of-fBodyBodyGyroMag-mean()"     
-     - "mean-of-fBodyBodyGyroMag-std()"       
-     - "mean-of-fBodyBodyGyroJerkMag-mean()"      
-     - "mean-of-fBodyBodyGyroJerkMag-std()"
+
+- "SubjectID": the ID of the subject that performed the activity    
+
+- "Activity": the performed activity, can be one of the following: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING  
+
+- Averages of the means and standard deviations of the variables of the feature vector for each pattern: (where "-XYZ" is used to denote 3-axial signals in the X, Y and Z directions.). The units of the acceleration signals (containing "Acc" in the name) are standard gravity units 'g'. The angular velocities measured by the gyroscope for each window sample (containing "Gyro" on the name) are radians/second.
+        - mean of the means of the time domain signal indicating the body linear acceleration           
+                - "mean-of-tBodyAcc-mean()-X"          
+                - "mean-of-tBodyAcc-mean()-Y"      
+                - "mean-of-tBodyAcc-mean()-Z"     
+        - mean of the standard deviation of the time domain signal indicating the body linear acceleration     
+                - "mean-of-tBodyAcc-std()-X"        
+                - "mean-of-tBodyAcc-std()-Y"            
+                - "mean-of-tBodyAcc-std()-Z"           
+        - mean of the means of the time domain signal indicating the gravity linear acceleration               
+                - "mean-of-tGravityAcc-mean()-X"        
+                - "mean-of-tGravityAcc-mean()-Y"         
+                - "mean-of-tGravityAcc-mean()-Z"         
+        - mean of the standard deviation of the time domain signal indicating the gravity linear acceleration
+                - "mean-of-tGravityAcc-std()-X"        
+                - "mean-of-tGravityAcc-std()-Y"         
+                - "mean-of-tGravityAcc-std()-Z"         
+        - mean of the means of the time domain jerk signal indicating the body linear acceleration
+                - "mean-of-tBodyAccJerk-mean()-X"      
+                - "mean-of-tBodyAccJerk-mean()-Y"       
+                - "mean-of-tBodyAccJerk-mean()-Z"       
+        - mean of the standard deviation of the time domain jerk signal indicating the body linear acceleration
+                - "mean-of-tBodyAccJerk-std()-X"       
+                - "mean-of-tBodyAccJerk-std()-Y"        
+                - "mean-of-tBodyAccJerk-std()-Z"        
+        - mean of the means of the time domain signal indicating the body angular velocity
+                - "mean-of-tBodyGyro-mean()-X"         
+                - "mean-of-tBodyGyro-mean()-Y"          
+                - "mean-of-tBodyGyro-mean()-Z"          
+        - mean of the standard deviation of the time domain signal indicating the body angular velocity
+                - "mean-of-tBodyGyro-std()-X"          
+                - "mean-of-tBodyGyro-std()-Y"           
+                - "mean-of-tBodyGyro-std()-Z"          
+        - mean of the means of the time domain jerk signal indicating the body angular velocity
+                - "mean-of-tBodyGyroJerk-mean()-X"     
+                - "mean-of-tBodyGyroJerk-mean()-Y"     
+                - "mean-of-tBodyGyroJerk-mean()-Z"      
+        - mean of the standard deviation of the time domain jerk signal indicating the body angular velocity
+                - "mean-of-tBodyGyroJerk-std()-X"      
+                - "mean-of-tBodyGyroJerk-std()-Y"       
+                - "mean-of-tBodyGyroJerk-std()-Z"       
+        - mean of the means of the time domain signal indicating the body linear acceleration magnitude
+                - "mean-of-tBodyAccMag-mean()"         
+        - mean of the standard deviation of the time domain signal indicating the body linear acceleration magnitude
+                - "mean-of-tBodyAccMag-std()"           
+        - mean of the means of the time domain signal indicating the gravity linear acceleration magnitude
+                - "mean-of-tGravityAccMag-mean()"       
+        - mean of the standard deviation of the time domain signal indicating the gravity linear acceleration magnitude
+                - "mean-of-tGravityAccMag-std()"       
+        - mean of the means of the time domain jerk signal indicating the body linear acceleration magnitude
+                - "mean-of-tBodyAccJerkMag-mean()"      
+        - mean of the standard deviation of the time domain jerk signal indicating the body linear acceleration magnitude
+                - "mean-of-tBodyAccJerkMag-std()"       
+        - mean of the means of the time domain signal indicating the body angular velocity magnitude
+                - "mean-of-tBodyGyroMag-mean()"        
+        - mean of the standard deviation of the time domain signal indicating the body angular velocity magnitude
+                - "mean-of-tBodyGyroMag-std()"          
+        - mean of the means of the time domain jerk signal indicating the body angular velocity magnitude
+                - "mean-of-tBodyGyroJerkMag-mean()"     
+        - mean of the standard deviation of the time domain jerk signal indicating the body angular velocity magnitude
+                - "mean-of-tBodyGyroJerkMag-std()"     
+        - mean of the means of the frequency domain signal indicating the body linear acceleration
+                - "mean-of-fBodyAcc-mean()-X"           
+                - "mean-of-fBodyAcc-mean()-Y"           
+                - "mean-of-fBodyAcc-mean()-Z"          
+        - mean of the standard deviation of the frequency domain signal indicating the body linear acceleration
+                - "mean-of-fBodyAcc-std()-X"            
+                - "mean-of-fBodyAcc-std()-Y"            
+                - "mean-of-fBodyAcc-std()-Z"           
+        - mean of the means frequency of the frequency domain signal indicating the body linear acceleration
+                - "mean-of-fBodyAccJerk-mean()-X"       
+                - "mean-of-fBodyAccJerk-mean()-Y"       
+                - "mean-of-fBodyAccJerk-mean()-Z"      
+        - mean of the means of the frequency domain jerk signal indicating the body linear acceleration
+                - "mean-of-fBodyAccJerk-std()-X"        
+                - "mean-of-fBodyAccJerk-std()-Y"        
+                - "mean-of-fBodyAccJerk-std()-Z"       
+        - mean of the means of the frequency domain signal indicating the body angular velocity
+                - "mean-of-fBodyGyro-mean()-X"          
+                - "mean-of-fBodyGyro-mean()-Y"          
+                - "mean-of-fBodyGyro-mean()-Z"         
+        - mean of the standard deviation of the frequency domain signal indicating the body angular velocity
+                - "mean-of-fBodyGyro-std()-X"           
+                - "mean-of-fBodyGyro-std()-Y"           
+                - "mean-of-fBodyGyro-std()-Z"          
+        - mean of the means of frequency time domain signal indicating the body linear acceleration magnitude
+                - "mean-of-fBodyAccMag-mean()"          
+        - mean of the standard deviation of frequency time domain signal indicating the body linear acceleration magnitude
+                - "mean-of-fBodyAccMag-std()"     
+        - mean of the means of the frequency domain jerk signal indicating the body linear acceleration magnitude
+                - "mean-of-fBodyBodyAccJerkMag-mean()"      
+        - mean of the standard deviation of the frequency domain jerk signal indicating the body linear acceleration magnitude
+                - "mean-of-fBodyBodyAccJerkMag-std()"     
+        - mean of the means of frequency time domain signal indicating the body angular velocity magnitude
+                - "mean-of-fBodyBodyGyroMag-mean()"     
+        - mean of the standard deviation of frequency time domain signal indicating the body angular velocity magnitude
+                - "mean-of-fBodyBodyGyroMag-std()"       
+        - mean of the means of the frequency domain jerk signal indicating the body angular velocity magnitude
+                - "mean-of-fBodyBodyGyroJerkMag-mean()"      
+        - mean of the standard deviation of the frequency domain jerk signal indicating the body angular velocity magnitude
+                - "mean-of-fBodyBodyGyroJerkMag-std()"
 
 #### Notes: 
 
